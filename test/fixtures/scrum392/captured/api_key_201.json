@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/auth/api-keys",
+    "body": {
+      "name": "DNey Guard (Chrome)"
+    },
+    "headers": {
+      "authorization": "Bearer <ACCESS_TOKEN>"
+    }
+  },
+  "status": 201,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": {
+    "id": "d5d3c1e4-02e4-410b-8623-9fd49a61b21b",
+    "name": "DNey Guard (Chrome)",
+    "key": "<RAW_KEY>",
+    "key_prefix": "asg_XXXXXX",
+    "rate_limit_rpm": 600,
+    "group_id": null
+  },
+  "_captured": "local asgard-services 5925bbb (origin/main, 12 Oct 2026), throwaway Postgres; secrets replaced with placeholders"
+}

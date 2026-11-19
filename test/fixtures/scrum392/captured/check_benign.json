@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/check",
+    "body": {
+      "text": "Can you suggest a name for a hiking club?",
+      "direction": "input"
+    },
+    "headers": {
+      "x-api-key": "<RAW_KEY>"
+    }
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "x-ratelimit-limit": "600",
+    "x-ratelimit-remaining": "597",
+    "x-ratelimit-reset": "59"
+  },
+  "body": {
+    "action": "allowed",
+    "text": "Can you suggest a name for a hiking club?",
+    "original_text": "Can you suggest a name for a hiking club?",
+    "rails_triggered": [],
+    "latency_ms": 119.47,
+    "rails": "full"
+  },
+  "_captured": "local asgard-services 5925bbb (origin/main, 12 Oct 2026), throwaway Postgres; secrets replaced with placeholders"
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to DNey Guard</title>
+    <style>
+      body { font: 15px/1.55 system-ui, sans-serif; margin: 0; padding: 32px 16px 48px; color: #161a20; background: #f7f8fa; }
+      #root { max-width: 680px; margin: 0 auto; }
+      h1 { font-size: 26px; margin: 0 0 8px; }
+      h2 { font-size: 18px; margin: 28px 0 8px; }
+      .lead { font-size: 16px; color: #2d3440; }
+      .card { background: #fff; border: 1px solid #e2e6ec; border-radius: 10px; padding: 4px 20px 20px; margin-top: 24px; }
+      .samples { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+      button, .button-link { font: inherit; font-size: 14px; padding: 7px 12px; border: 1px solid #cfd4dc; border-radius: 6px; background: #fff; color: #161a20; cursor: pointer; text-decoration: none; display: inline-block; }
+      .primary, .button-link { background: #2f6fd6; border-color: #2f6fd6; color: #fff; font-weight: 600; }
+      .primary:disabled { opacity: 0.7; cursor: default; }
+      label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+      textarea { box-sizing: border-box; width: 100%; font: inherit; padding: 8px 10px; border: 1px solid #cfd4dc; border-radius: 6px; margin-bottom: 10px; }
+      .result { margin: 14px 0 0; font-weight: 600; }
+      .result.blocked { color: #c23b32; }
+      .result.masked, .result.failed { color: #9a6410; }
+      .result.allowed { color: #1a8f63; }
+      .masked-text { margin: 8px 0 0; padding: 8px 12px; background: #f2f4f7; border-left: 3px solid #e0a13c; white-space: pre-wrap; }
+      ul { padding-left: 20px; }
+      li { margin-bottom: 8px; }
+      .banners { list-style: none; padding: 0; }
+      .pill { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 13px; font-weight: 600; color: #fff; }
+      .pill.red { background: #c23b32; }
+      .pill.amber { background: #b9791a; }
+      footer { margin-top: 32px; font-size: 13px; color: #5a6472; }
+      a { color: #2f6fd6; }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script src="welcome.js"></script>
+  </body>
+</html>

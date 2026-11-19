@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/check",
+    "body": {
+      "text": "My Social Security number is 078-05-1120.",
+      "direction": "input"
+    },
+    "headers": {
+      "x-api-key": "<RAW_KEY>"
+    }
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "x-ratelimit-limit": "600",
+    "x-ratelimit-remaining": "598",
+    "x-ratelimit-reset": "60"
+  },
+  "body": {
+    "action": "modified",
+    "text": "My Social Security number is [SSN].",
+    "original_text": "My Social Security number is 078-05-1120.",
+    "rails_triggered": [
+      "Input PII Check (formats)"
+    ],
+    "latency_ms": 613.64,
+    "rails": "full"
+  },
+  "_captured": "local asgard-services 5925bbb (origin/main, 12 Oct 2026), throwaway Postgres; secrets replaced with placeholders"
+}

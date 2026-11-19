@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DNey Guard — Settings</title>
+    <style>
+      body { font: 14px/1.5 system-ui, sans-serif; max-width: 540px; margin: 28px auto; padding: 0 18px; color: #161a20; }
+      h1 { font-size: 18px; }
+      label { display: block; margin: 14px 0 4px; font-weight: 600; font-size: 13px; }
+      input, select { width: 100%; padding: 7px 8px; border: 1px solid #cfd4dc; border-radius: 6px; font: inherit; }
+      .row { display: flex; align-items: center; gap: 8px; }
+      .row input[type="checkbox"] { width: auto; }
+      .locked { opacity: 0.6; }
+      .locked-note { color: #b9791a; font-size: 12px; margin-top: 2px; }
+      button { margin-top: 18px; padding: 8px 16px; border: 0; border-radius: 6px; background: #2f6fd6; color: #fff; font-weight: 600; cursor: pointer; }
+      #status { color: #1a8f63; font-size: 13px; height: 18px; }
+    </style>
+  </head>
+  <body>
+    <h1>DNey Guard — Settings</h1>
+    <p id="managed" class="locked-note"></p>
+    <form id="form"></form>
+    <button id="save">Save</button>
+    <p id="status"></p>
+    <p><a id="welcome" href="#" target="_blank" hidden></a></p>
+    <script src="options.js"></script>
+  </body>
+</html>

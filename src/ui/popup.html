@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DNey Guard</title>
+    <style>
+      body { font: 13px/1.5 system-ui, sans-serif; width: 320px; margin: 0; padding: 12px 14px; color: #161a20; }
+      h1 { font-size: 14px; margin: 0 0 8px; }
+      .mode { color: #5a6472; font-size: 12px; margin-bottom: 8px; }
+      .warn { color: #c23b32; font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+      .warn:empty { display: none; }
+      table { width: 100%; border-collapse: collapse; font-size: 12px; }
+      th, td { text-align: left; padding: 3px 4px; border-bottom: 1px solid #eef0f3; }
+      .a-blocked { color: #c23b32; }
+      .a-modified { color: #b9791a; }
+      .a-error { color: #b9791a; }
+      .a-throttled { color: #b9791a; font-weight: 600; }
+      .a-unchecked { color: #b9791a; font-weight: 600; }
+      .a-partial { color: #b9791a; font-weight: 600; }
+      .a-allowed { color: #1a8f63; }
+      .actions { margin-top: 10px; display: flex; gap: 8px; }
+      button { font: inherit; padding: 5px 10px; border: 1px solid #cfd4dc; border-radius: 6px; background: #fff; cursor: pointer; }
+      a { color: #2f6fd6; font-size: 12px; }
+      h2 { font-size: 15px; margin: 4px 0 6px; }
+      p { margin: 0 0 8px; }
+      form { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+      label { font-weight: 600; font-size: 12px; margin-top: 4px; }
+      input { font: inherit; padding: 6px 8px; border: 1px solid #cfd4dc; border-radius: 6px; }
+      .hint { color: #5a6472; font-size: 12px; }
+      .primary { margin-top: 8px; background: #2f6fd6; border-color: #2f6fd6; color: #fff; font-weight: 600; padding: 7px 10px; }
+      .primary:disabled { opacity: 0.7; cursor: default; }
+      .error { color: #c23b32; font-size: 12px; font-weight: 600; margin: 6px 0 0; }
+      .small { color: #5a6472; font-size: 12px; }
+      .terms { font-size: 12px; margin: 6px 0 0; }
+      .terms a { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

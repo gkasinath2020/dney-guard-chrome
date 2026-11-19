@@ -1,0 +1,24 @@
+{
+  "_about": "SCRUM-396: rule names of the three default templates, read with `git show origin/main:src/asgard/templates/definitions/<file>.yaml` at asgard-services 5925bbb (12 Oct 2026), plus the per-entity names config_builder.py derives (\"<rule> (<ENTITY>)\" at :734, \"<rule> (formats)\" at :764). src/ui/protection-names.ts must map exactly these. Re-read when a default template changes.",
+  "templates": {
+    "prompt-injection": [
+      "Prompt Injection Detection",
+      "Prompt Injection Semantic Check",
+      "Prompt Injection Output Check",
+      "Prompt Injection Semantic Output Check"
+    ],
+    "pii-protection": [
+      "Input PII Check",
+      "Input Credit Card Check",
+      "Output PII Check"
+    ],
+    "data-exfiltration": [
+      "Exfiltration Instruction Detection",
+      "Credential Disclosure Detection",
+      "Exfiltration Semantic Check",
+      "Exfiltration Channel Detection",
+      "Secret Disclosure Masking",
+      "Exfiltration Semantic Output Check"
+    ]
+  }
+}

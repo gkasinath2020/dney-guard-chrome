@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/check",
+    "body": {
+      "text": "Can you suggest a name for a hiking club?",
+      "direction": "input"
+    },
+    "headers": {
+      "x-api-key": "dney_bogus_key_000000"
+    }
+  },
+  "status": 401,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": {
+    "detail": "Invalid API key"
+  },
+  "_captured": "local asgard-services 5925bbb (origin/main, 12 Oct 2026), throwaway Postgres; secrets replaced with placeholders"
+}

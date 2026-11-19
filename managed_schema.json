@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "dney_base_url": { "type": "string" },
+    "api_key": { "type": "string" },
+    "input_mode": { "type": "string", "enum": ["enforce", "monitor", "off"] },
+    "output_mode": { "type": "string", "enum": ["enforce_hard", "enforce_soft", "monitor", "off"] },
+    "fail_policy": { "type": "string", "enum": ["open", "closed"] },
+    "allow_override": { "type": "boolean" },
+    "chunk_size": { "type": "integer" },
+    "chunk_interval_ms": { "type": "integer" },
+    "input_timeout_ms": { "type": "integer" },
+    "output_timeout_ms": { "type": "integer" },
+    "audit_buffer_size": { "type": "integer" },
+    "enrolment_token": { "type": "string" }
+  }
+}
