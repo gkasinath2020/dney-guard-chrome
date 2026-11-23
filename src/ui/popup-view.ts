@@ -11,7 +11,7 @@ import { popupMode } from "../lib/onboarding";
 import type { Protections, SigninError, SigninOutcome } from "../lib/signin";
 import { TERMS_VERSION } from "../lib/signup";
 import type { SignupError, SignupOutcome } from "../lib/signup";
-import { PARTIAL_ROW_LABEL } from "../lib/status";
+import { CHECKER_UNAVAILABLE_ROW_LABEL, PARTIAL_ROW_LABEL } from "../lib/status";
 import type { AuditAction, AuditEvent } from "../lib/types";
 import { COPY, LINKS } from "./onboarding-copy";
 
@@ -370,7 +370,10 @@ function signinResult(doc: Document, outcome: Extract<SigninOutcome, { ok: true 
 }
 
 /** Activity-row labels that differ from the raw action id. */
-const ACTION_LABELS: Partial<Record<AuditAction, string>> = { partial: PARTIAL_ROW_LABEL };
+const ACTION_LABELS: Partial<Record<AuditAction, string>> = {
+  partial: PARTIAL_ROW_LABEL,
+  checker_unavailable: CHECKER_UNAVAILABLE_ROW_LABEL, // SCRUM-565
+};
 
 /** What Sign out removes from chrome.storage.local. welcome_opened is kept. */
 export const SIGN_OUT_KEYS = ["api_key", "api_key_id"] as const;

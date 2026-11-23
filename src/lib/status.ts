@@ -18,10 +18,32 @@ export function badgeState(verdict: Verdict): BadgeState {
   return verdict.action === "blocked" ? "blocking" : "healthy";
 }
 
+/**
+ * SCRUM-565: a block because Dney's safety checker could not run, with no rule
+ * that actually fired. Not a policy match: shown bare, labelled "Checker
+ * unavailable". When a rule DID fire alongside (rails_triggered not empty), the
+ * block is that rule's, and this is false (Assay #3026).
+ */
+export function isCheckerUnavailable(verdict: Verdict | null | undefined): boolean {
+  if (!verdict || verdict.failed || verdict.action !== "blocked") return false;
+  if ((verdict.rails_triggered?.length ?? 0) > 0) return false;
+  return (verdict.checker_unavailable?.length ?? 0) > 0 || verdict.semantic_unavailable === true;
+}
+
+/** Badge tooltip for a verdict, or null to restore the default title. */
+export const CHECKER_UNAVAILABLE_TOOLTIP = "Safety checker unavailable: message not sent.";
+export function badgeTitle(verdict: Verdict): string | null {
+  return isCheckerUnavailable(verdict) ? CHECKER_UNAVAILABLE_TOOLTIP : null;
+}
+
+/** P-label for the popup activity row of a checker-unavailable block. */
+export const CHECKER_UNAVAILABLE_ROW_LABEL = "Checker unavailable";
+
 /** The audit row's action. Mirrors badgeState so the popup and the badge agree. */
 export function auditAction(verdict: Verdict): AuditAction {
   if (verdict.throttled) return "throttled";
   if (verdict.failed) return "error";
+  if (isCheckerUnavailable(verdict)) return "checker_unavailable";
   if (isPartial(verdict) && verdict.action !== "blocked") return "partial";
   return verdict.action;
 }

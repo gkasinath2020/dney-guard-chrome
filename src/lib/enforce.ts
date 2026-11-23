@@ -8,6 +8,7 @@ import {
   PARTIAL_SENT_MESSAGE,
   STALE_TAB_BLOCKED_TEXT,
   STALE_TAB_SENT_TEXT,
+  isCheckerUnavailable,
   isPartial,
   uncheckedBannerText,
   wentOutUnchecked,
@@ -49,7 +50,12 @@ export function decideInput(
   if (verdict.action === "blocked") {
     // A block because the check could not run or only partly ran (fail-closed) is
     // not a policy match: shown bare, with no "blocked by policy (rails)" prefix.
-    const bare = verdict.failed === true || (isPartial(verdict) && verdict.text === PARTIAL_BLOCK_MESSAGE);
+    // SCRUM-565: so is a block the server made because its safety checker could
+    // not run (no rule fired): its text says so, and the prefix would contradict it.
+    const bare =
+      verdict.failed === true ||
+      (isPartial(verdict) && verdict.text === PARTIAL_BLOCK_MESSAGE) ||
+      isCheckerUnavailable(verdict);
     return {
       kind: "block",
       message: verdict.text || "Blocked by policy.",

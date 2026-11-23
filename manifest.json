@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DNey Guard: AI guardrails for ChatGPT and Claude",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Checks what you send to ChatGPT and Claude for personal data, API keys and prompt injection, then masks or blocks it.",
   "icons": {
     "16": "icons/icon16.png",

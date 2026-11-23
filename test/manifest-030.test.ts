@@ -8,15 +8,18 @@
 // permissions unchanged.
 // 0.3.5 (SCRUM-480): Sign out in the popup; summary from STORE_SEARCH_TUNE_1 change 1
 // (Hallmark, cleared by Assay 26 Oct, Baton #194); permissions unchanged.
+// 0.3.6 (SCRUM-565): a block because the safety checker was unavailable shows the
+// server's text bare (no "blocked by policy"), popup row "Checker unavailable",
+// badge tooltip; summary and permissions unchanged.
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const manifest = JSON.parse(readFileSync(join(__dirname, "..", "manifest.json"), "utf8"));
 
-describe("manifest 0.3.5", () => {
+describe("manifest 0.3.6", () => {
   it("version and store display name (GK, 12 Oct), within Chrome's 75-character limit", () => {
-    expect(manifest.version).toBe("0.3.5");
+    expect(manifest.version).toBe("0.3.6");
     expect(manifest.name).toBe("DNey Guard: AI guardrails for ChatGPT and Claude");
     expect(manifest.name.length).toBeLessThanOrEqual(75);
     expect(existsSync(join(__dirname, "..", "_locales"))).toBe(false); // no localized name to keep in step

@@ -4,7 +4,7 @@
 import { loadConfig, loadConfigState, migrateSyncKey } from "./lib/config";
 import { guardedCheck } from "./lib/guarded-check";
 import { AuditLog } from "./lib/audit";
-import { auditAction, badgeState } from "./lib/status";
+import { auditAction, badgeState, badgeTitle } from "./lib/status";
 import type { BadgeState } from "./lib/status";
 import type { AuditEvent, ClientMeta, Direction } from "./lib/types";
 import { chromeDeps, fromExtensionPage, handleSignin, handleSignup, handleTryCheck, showWelcome } from "./lib/onboarding";
@@ -58,6 +58,8 @@ async function handleCheck(msg: CheckMessage) {
   };
   audit.add(event);
   setBadge(badgeState(verdict));
+  // SCRUM-565: say why on hover when the checker was unavailable; otherwise restore.
+  void chrome.action.setTitle({ title: badgeTitle(verdict) ?? "DNey Guard" });
 
   // monitor mode: report + log but never act on the verdict. `failed`/`throttled`
   // still travel back — monitor mode suppresses ENFORCEMENT, not the fact that

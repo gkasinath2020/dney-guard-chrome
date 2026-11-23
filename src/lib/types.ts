@@ -15,6 +15,12 @@ export interface CheckResult {
   checked?: "complete" | "partial";
   /** SCRUM-401: internal reason-type ids for a partial check. Never shown to users. */
   unchecked?: string[];
+  /** SCRUM-565 (server v0.99.7+): checks that blocked because Dney's safety checker
+   *  could not run, by name. They did not fire, so they are not in rails_triggered.
+   *  Never shown to the user. */
+  checker_unavailable?: string[];
+  /** Set by servers that report a model-tier outage on the result. */
+  semantic_unavailable?: boolean;
 }
 
 /** A CheckResult plus whether the fail-safe policy had to be applied. */
@@ -53,7 +59,7 @@ export interface Config {
  * kept distinct so a rate limit is never read back as a clean pass. "partial"
  * (SCRUM-401) is a send DNey answered but only partly judged.
  */
-export type AuditAction = Action | "error" | "throttled" | "unchecked" | "partial";
+export type AuditAction = Action | "error" | "throttled" | "unchecked" | "partial" | "checker_unavailable";
 
 export interface AuditEvent {
   ts: number;
